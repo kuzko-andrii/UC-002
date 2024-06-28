@@ -6,7 +6,7 @@
   - [TOC](#toc)
   - [Playbook Overview](#playbook-overview)
   - [Known issues](#known-issues)
-    - [Джерело, що обгрунтовує виключення](#джерело-що-обгрунтовує-виключення)
+    - [Source justifying the exception](#source-justifying-the-exception)
   - [Phase 1 - Offense Analysis](#phase-1---offense-analysis)
     - [Task 1 - Event Analysis](#task-1---event-analysis)
     - [Task 2 - Check Violation](#task-2---check-violation)
