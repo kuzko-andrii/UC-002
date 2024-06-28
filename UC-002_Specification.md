@@ -154,7 +154,7 @@ AND when the event QID is one of the following (5000847) Success Audit: An objec
 
 **Description:** Виявлення видаленя важливих файлів на хості 192.168.111.49 в папці Documents.
 
-**Status:** Implemented
+**Status:** Впроваджено
 
 **Automatization:** -
 
