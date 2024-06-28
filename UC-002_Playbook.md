@@ -5,7 +5,7 @@
 - [UС-002: Detect deletion of important files from the Document folder](#uс-002-detect-deletion-of-important-files-from-the-document-folder)
   - [TOC](#toc)
   - [Playbook Overview](#playbook-overview)
-  - [Known issues (якщо такі виявлено)](#known-issues-якщо-такі-виявлено)
+  - [Known issues](#known-issues)
     - [Джерело, що обгрунтовує виключення](#джерело-що-обгрунтовує-виключення)
   - [Phase 1 - Offense Analysis](#phase-1---offense-analysis)
     - [Task 1 - Event Analysis](#task-1---event-analysis)
@@ -19,13 +19,13 @@
 
 ## Playbook Overview
 
-Даний плейбук містить план реагування на інцидент з ідентифікатором UC-002.
+This playbook contains an incident response plan with the identifier UC-002.
 
-## Known issues (якщо такі виявлено)
+## Known issues
 
-### Джерело, що обгрунтовує виключення
+### Source justifying the exception
 
-Якщо дія виконана користувачем з Username "ddraguncov", то такі дії вважаються легітимними й не підлягають під подальший аналіз.
+If the action is performed by a user with the Username "ddraguncov", such actions are considered legitimate and are not subject to further analysis.
 
 ## Phase 1 - Offense Analysis
 
@@ -37,9 +37,9 @@
 - **Due Date** : No
 - **Instructions** :
 
-1. Відкрити Offense, змінити його статус на Protected
-2. Призначити Offense на свій обліковий запис.
-3. Перейти у список подій і визначити значення полів:
+1. Open Offense, change its status to Protected
+2. Assign Offense to your account.
+3. Go to the list of events and define the values of the fields:
 
 - [ ] Log Source
 - [ ] Source IP
@@ -47,7 +47,7 @@
 - [ ] Username
 - [ ] Count of events
 
-* **Incident Fields** : Значення полів з п.3
+* **Incident Fields** : Values of the fields from p.3
 * **Comments** : -
 
 ### Task 2 - Check Violation
@@ -58,22 +58,22 @@
 - **Due Date** : No
 - **Instructions** :
 
-1.  Перевірити, що Username не є винятком, а саме не є "ddraguncov"
-2.  **Сценарій 1 - Username є винятком для даного інциденту**:
+1.  Check that the Username is not an exception, namely, it is not "ddraguncov"
+2.  **Scenario 1 - Username is an exception to this incident**:
 
-- [ ] Додати нотатку:
+- [ ] Add note:
 
 ```
-Дія від користувача "ddraguncov" погоджена в рамках проекту #328-17
+The action from the user "ddraguncov" was approved within the project #328-17
 ```
 
-- [ ] Перейти до закриття Offense з Close Reason = Non-issue
+- [ ] Go to close Offense with the Close Reason = Non-issue
 
-**Сценарій 2 - Дійсне спрацювання**:
+**Scenario 2 - Actual triggering**:
 
-- [ ] Перейти до наступного завдання
+- [ ] Go to the next task
 
-* **Incident Fields** : Обрано сенарій опрацювання
+* **Incident Fields** : The processing scenario is selected
 * **Comments** : --
 
 ### Task 3 - Search remote communication
@@ -84,77 +84,77 @@
 - **Due Date** : No
 - **Instructions** :
 
-1. Перейти у Log Activity.
-2. Додати фільтр Destination IP contains any of <Вказати Destination IP>
-3. Виконати пошук за останні 3 години з групуванням по назві події.
-4. Визначити, чи є події котрі свідячать про попереднє віддалене підключення до хоста.
+1. Go to Activity log.
+2. Add the filter Destination IP contains any of <Specify Destination IP>.
+3. Perform a search for the last 3 hours grouped by event name.
+4. Determine if there are any events that indicate a previous remote connection to the host.
 
-5. **Сценарій 1 - Не виявлено підозрілі підключення**:
+5. **Scenario 1 - No suspicious connections detected**:
 
-- [ ] Перейти до наступного завдання
+- [ ] Go to the next task
 
-**Сценарій 2 - Виявлено підозрілі підключення**:
+**Scenario 2 - Suspicious connections are detected**:
 
-- [ ] Додати нотатку:
+- [ ] Add note:
 
 ```
-Історичний пошук подій за даною IP адресою показав:
-<Вписати час події-1> - <Назва події-1> - <Source IP-1> - <Destination-1> - <Log Source-1>
-<Вписати час події-2> - <Назва події-2> - <Source IP-2> - <Destination-2> - <Log Source-2>...
+The historical search for events at this IP address showed:
+<Write the time of event-1> - <Event name-1> - <Source IP-1> - <Destination-1> - <Log Source-1>
+<Write the time of event-2> - <Event name-2> - <Source IP-2> - <Destination-2> - <Log Source-2>...
 ```
 
-- [ ] Перейти до наступного завдання
+- [ ] Go to the next task
 
-* **Incident Fields** : Обрано сценарій опрацювання
+* **Incident Fields** : The processing scenario is selected
 * **Comments** : --
 
 ### Task 4 - Reputation check
 
 - **Task Name** : Reputation check
 - **Performer** : SOC L1
-- **Required** : Optional (умова пропуску: сценарій 1 в попередньому завданні)
+- **Required** : Optional (pass condition: scenario 1 in the previous task)
 - **Due Date** : No
 - **Instructions** :
 
-1. Проаналізувати репутацію Source IP з події про віддалене підключення на ресурсі IBM X-Force (https://exchange.xforce.ibmcloud.com/)
-2. Проаналізувати репутацію Source IP з події про віддалене підключення з допомогою ресурсу Virus Total (https://www.virustotal.com/).
-3. Виконати перевірку репутації з допомогою Cisco Talos (https://talosintelligence.com/reputation_center/).
-4. Додати нотатку, якщо репутація негативна:
+1. Analyze the Source IP reputation from the remote connection event on the IBM X-Force resource (https://exchange.xforce.ibmcloud.com/)
+2. Analyze the reputation of the Source IP from the remote connection event using Virus Total (https://www.virustotal.com/).
+3. Perform a reputation check using Cisco Talos (https://talosintelligence.com/reputation_center/).
+4. Add a note if the reputation is negative:
 
 ```
-Репутація ІР <ip_address> є негативною згідно бази <Вписати назву бази>.
-<Посилання на звіт>
+The reputation of IP <ip_address> is negative according to the database <Enter database name>.
+<Link to the report
 ```
 
-- **Incident Fields** : Визначена репутація Source IP.
+- **Incident Fields** : The reputation of the Source IP is determined
 - **Comments** : -
 
-### Task 5 - Створити звернення від SOC Analyst до SOC Analyst
+### Task 5 - Create a message from SOC Analyst to SOC Analyst
 
-- **Task Name** : Створити звернення
+- **Task Name** : Create a message from SOC Analyst to SOC Analyst
 - **Performer** : SOC L1\SOC Analyst
 - **Required** : Optional (умова пропуску: хибне спрацювання)
 - **Due Date** : No
 - **Instructions** :
 
-1. Сформувати звернення з параметрами згідно поточного workflow на Замовника. Звернення повинно містити контекст виявленого потенційного інциденту та чітке ТЗ на Замовника (уточнення легітимності по виявленій активності, блокування ОЗ, ізоляція хоста, тощо).
-2. Змінити статус Offense на Follow Up, додати нотатку з номером звернення.
+1. Create a request with parameters according to the current workflow for the Customer. The request should contain the context of the detected potential incident and a clear statement of work for the Customer (clarification of legitimacy for the detected activity, blocking of the OS, host isolation, etc.)
+2. Change the status of Offense to Follow Up, add a note with the number of the request.
 
 - **Incident Fields** : Note
 - **Comments** : --
 
 ## Phase 2 - Eliminating the consequences of the incident
 
-### Task 1 - Створити звернення від SOC L1 до SOC Analyst
+### Task 1 - Create an appeal from SOC Analyst to customer's IS
 
-- **Task Name** : Створити звернення
-- **Performer** : SOC Analyst\IS замовника
+- **Task Name** : Create an appeal from SOC Analyst to customer's IS
+- **Performer** : SOC Analyst\Customer's IS
 - **Required** : Mandatory
 - **Due Date** : No
 - **Instructions** :
 
-1. Сформувати звернення до IS замовника з інформацією про інцидент та проханням реагування, наприклад блокування хоста, розірвання віддаленого підключення до хоста, відновлення видалених даних, тощо.
-2. Змінити статус Offense на Follow Up, додати нотатку з номером звернення.
+1. Create a request to the customer's IS with information about the incident and a request for response, such as blocking the host, terminating the remote connection to the host, recovering deleted data, etc.
+2. Change the Offense status to Follow Up, add a note with the request number.
 
 - **Incident Fields** : Note
 - **Comments** : --
@@ -167,8 +167,8 @@
 - **Due Date** : No
 - **Instructions** :
 
-1. Переконатись, що статус всіх звернень, звязаних з інцидентом - Виконано.
-2. Закрити Offense відповідно до Close Reason у сценарії\закрити як Resolved.
+1. Ensure that the status of all incident-related requests is Completed.
+2. Close the Offense according to the Close Reason in the scenario\close as Resolved.
 
-- **Incident Fields** : Закритий Offense.
+- **Incident Fields** : Closed Offense.
 - **Comments** : --
