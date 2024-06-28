@@ -59,7 +59,7 @@
 | _Log Source Types_          | Microsoft Windows Security Event Log                     |
 | _Requestor_                 | SOC Tier 1                                               |
 | _Owner_                     | AKuzko                                                   |
-| _Passport_                  | ?                                                        |
+| _Passport_                  | -                                                        |
 
 ### Status
 
@@ -101,7 +101,7 @@
 | _IS-відділ Замовника_   | Yes                                                                                                             |
 | _IT-відділ Замовника_   | Yes                                                                                                             |
 | _Playbook Activation_   | Наявність спрацювання кореляційного правила UС-002: Detect deletion of important files from the Document folder |
-| _Playbook_              | ?                                                                                                               |
+| _Playbook_              | [Link](UC-002_Playbook.md)                                                                                                               |
 
 ## IBM QRadar SIEM
 
