@@ -133,7 +133,7 @@ The reputation of IP <ip_address> is negative according to the database <Enter d
 
 - **Task Name** : Create a message from SOC Analyst to SOC Analyst
 - **Performer** : SOC L1\SOC Analyst
-- **Required** : Optional (умова пропуску: хибне спрацювання)
+- **Required** : Optional (pass condition: false positive)
 - **Due Date** : No
 - **Instructions** :
 
