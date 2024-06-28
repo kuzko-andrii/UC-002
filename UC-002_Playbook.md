@@ -12,9 +12,9 @@
     - [Task 2 - Check Violation](#task-2---check-violation)
     - [Task 3 - Search remote communication](#task-3---search-remote-communication)
     - [Task 4 - Reputation check](#task-4---reputation-check)
-    - [Task 5 - Створити звернення від SOC Analyst до SOC Analyst](#task-5---створити-звернення-від-soc-analyst-до-soc-analyst)
+    - [Task 5 - Create a message from SOC Analyst to SOC Analyst](#task-5---create-a-message-from-soc-analyst-to-soc-analyst)
   - [Phase 2 - Eliminating the consequences of the incident](#phase-2---eliminating-the-consequences-of-the-incident)
-    - [Task 1 - Створити звернення від SOC L1 до SOC Analyst](#task-1---створити-звернення-від-soc-l1-до-soc-analyst)
+    - [Task 1 - Create an appeal from SOC Analyst to customer's IS](#task-1---create-an-appeal-from-soc-analyst-to-customers-is)
     - [Task 2 - Close offense](#task-2---close-offense)
 
 ## Playbook Overview
